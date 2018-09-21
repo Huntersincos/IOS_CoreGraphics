@@ -1,9 +1,7 @@
 # IOS_CoreGraphics
-
-    CoreGraphics是提供2D绘图的框架,使用C结构和C函数模拟了一套面向对象的变成机制,没有OC/Swift对象方法机制;2D绘图并不能操作单独的像素;所以绘制机制
- 都是都是在context上下文进行的.数据结构和函数可以通过CG来识别.
+     CoreGraphics是提供2D绘图的框架,使用C结构和C函数模拟了一套面向对象的变成机制,没有OC/Swift对象方法机制;2D绘图并不能操作单独的像素;所以绘制机制都是在context上下文进行的.数据结构和函数可以通过CG来识别.
     
-    CoreGraphics的优点:
+     CoreGraphics的优点:
      
      1 快速,高效绘图,可以减少文件大小
      
