@@ -8,3 +8,16 @@
      2 可以自由使用动态的,搞质量的图像
      
      3 可以创建直线,路径,渐变,文字与图像等内容,并可以做变现处理
+     
+     CGContextRef:获取上下文画布:CGContextRef ctx =  UIGraphicsGetCurrentContext();
+     CGContextAddRect:绘制闭合曲
+     CGContextSetFillColorWithColor:设置填充颜色
+     CGContextFillPath:填充路径
+     (1) 绘制一个矩形 
+     CGContextRef ctx =  UIGraphicsGetCurrentContext();
+     CGContextAddRect(ctx, rect);
+     CGContextSetFillColorWithColor(ctx, [UIColor greenColor].CGColor);
+     CGContextFillPath(ctx);
+
+     
+   
