@@ -13,7 +13,9 @@
      CGContextAddRect:绘制闭合曲
      CGContextSetFillColorWithColor:设置填充颜色
      CGContextFillPath:填充路径
+     CGContextStrokePath:绘制路径
      CGContextAddArc:绘弧线 
+     CGContextAddEllipseInRect:绘制椭圆
      (1) 绘制一个矩形 
      CGContextRef ctx =  UIGraphicsGetCurrentContext();
      CGContextAddRect(ctx, rect);
