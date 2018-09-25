@@ -13,11 +13,21 @@
      CGContextAddRect:绘制闭合曲
      CGContextSetFillColorWithColor:设置填充颜色
      CGContextFillPath:填充路径
+     CGContextAddArc:绘弧线 
      (1) 绘制一个矩形 
      CGContextRef ctx =  UIGraphicsGetCurrentContext();
      CGContextAddRect(ctx, rect);
      CGContextSetFillColorWithColor(ctx, [UIColor greenColor].CGColor);
      CGContextFillPath(ctx);
-
-     
-   
+     (2)绘制一个圆或者椭圆
+     x:圆弧的中心点坐标x
+     y:曲线控制点的y坐标 
+     radius:指定的x坐标值
+     startAngle:弧的起点与x轴的夹角
+     endAngle:弧的终点与x轴的夹角
+     clockWise:指定值1
+     CGContextRef ctx = UIGraphicsGetCurrentContext();
+     CGContextAddArc(ctx, rect.origin.x + rect.size.width/2, rect.origin.y + rect.size.width/2, rect.size.width/2, 0, 2* M_PI, 1);
+     CGContextSetFillColorWithColor(ctx, [UIColor orangeColor].CGColor);
+     CGContextFillPath(ctx);
+      
