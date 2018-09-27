@@ -19,18 +19,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQY-e0-2NS" customClass="CoreGrapicsView">
-                                <rect key="frame" x="62" y="11" width="240" height="64"/>
+                                <rect key="frame" x="58" y="14" width="259" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="oei-BT-gBX"/>
+                                    <constraint firstAttribute="height" constant="300" id="CNu-9n-53b"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="iQY-e0-2NS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="11" id="5wE-NJ-vJk"/>
-                            <constraint firstItem="iQY-e0-2NS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="fd3-IB-e9H"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iQY-e0-2NS" secondAttribute="trailing" constant="73" id="lYa-hv-7zG"/>
+                            <constraint firstItem="iQY-e0-2NS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="14" id="0B0-DO-h5r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iQY-e0-2NS" secondAttribute="trailing" constant="58" id="AqR-Xx-25y"/>
+                            <constraint firstItem="iQY-e0-2NS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="a4g-Ey-F9l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,6 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116" y="117.39130434782609"/>
         </scene>
     </scenes>
 </document>
