@@ -15,7 +15,8 @@
     [super drawRect:rect];
     //[self drawOneRectangle:rect];
    // [self drawCircleAtx:rect];
-    [self drawEllipse:rect];
+   // [self drawEllipse:rect];
+    [self drawTriangle];
 }
 
 /**
@@ -68,6 +69,25 @@
     CGContextStrokePath(ctx);
     
 }
+
+/**
+绘制个多边形 三角形
+ **/
+
+- (void)drawTriangle
+{
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextBeginPath(ctx);
+    CGContextMoveToPoint(ctx, 100, 40);
+    CGContextAddLineToPoint(ctx, 80, 80);
+    CGContextAddLineToPoint(ctx, 130, 80);
+    CGPDFContextClose(ctx);
+    CGContextSetFillColorWithColor(ctx, [UIColor yellowColor].CGColor);
+    //CGContextFillPath(ctx);
+    CGContextDrawPath(ctx, kCGPathFillStroke);
+
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
