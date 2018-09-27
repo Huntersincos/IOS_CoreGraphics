@@ -16,6 +16,10 @@
      CGContextStrokePath:绘制路径
      CGContextAddArc:绘弧线 
      CGContextAddEllipseInRect:绘制椭圆
+     CGContextMoveToPoint:绘制多边形从一个点开始新的子路径
+     CGContextAddlineToPoint:在当前点追加直线段
+     CGContextClosePath:关闭路径
+     CGContextDrawPath:绘制坐标路径
      (1) 绘制一个矩形 
      CGContextRef ctx =  UIGraphicsGetCurrentContext();
      CGContextAddRect(ctx, rect);
@@ -38,4 +42,12 @@
        CGContextSetFillColorWithColor(ctx, [UIColor redColor].CGColor);
        CGContextFillPath(ctx);
        CGContextStrokePath(ctx);
-      
+     (4)绘制多边形
+      CGContextRef ctx = UIGraphicsGetCurrentContext();
+      CGContextBeginPath(ctx);
+      CGContextMoveToPoint(ctx, 100, 40);
+      CGContextAddLineToPoint(ctx, 80, 80);
+      CGContextAddLineToPoint(ctx, 130, 80);
+      CGPDFContextClose(ctx);
+      CGContextSetFillColorWithColor(ctx, [UIColor yellowColor].CGColor);
+      CGContextFillPath(ctx);
