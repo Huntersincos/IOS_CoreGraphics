@@ -16,7 +16,8 @@
     //[self drawOneRectangle:rect];
    // [self drawCircleAtx:rect];
    // [self drawEllipse:rect];
-    [self drawTriangle];
+    //[self drawTriangle];
+    [self drawQuadCurve];
 }
 
 /**
@@ -88,6 +89,23 @@
 
 }
 
+/**
+ 绘制不规则图片
+ **/
+- (void)drawQuadCurve{
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextBeginPath(ctx);
+    CGContextMoveToPoint(ctx, 0,40);
+    // cpx:曲线控制点的x轴
+    // cpy:曲线控制点的y轴
+    CGContextAddQuadCurveToPoint(ctx, 0, 100, 25, 25);
+    CGContextSetLineWidth(ctx, 5);
+    //CGContextSetLineCap(<#CGContextRef  _Nullable c#>, <#CGLineCap cap#>)
+    CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor);
+    CGContextSetFillColorWithColor(ctx, [UIColor blueColor].CGColor);
+    CGContextStrokePath(ctx);
+    
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
