@@ -57,6 +57,18 @@
       CGPDFContextClose(ctx);
       CGContextSetFillColorWithColor(ctx, [UIColor yellowColor].CGColor);
       CGContextFillPath(ctx);
+      (5)绘制不规则图形
+       CGContextRef ctx = UIGraphicsGetCurrentContext();
+      CGContextBeginPath(ctx);
+      CGContextMoveToPoint(ctx, 0,40);
+      // cpx:曲线控制点的x轴
+      // cpy:曲线控制点的y轴
+      CGContextAddQuadCurveToPoint(ctx, 0, 100, 25, 25);
+      CGContextSetLineWidth(ctx, 5);
+      //CGContextSetLineCap(<#CGContextRef  _Nullable c#>, <#CGLineCap cap#>)
+      CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor);
+      CGContextSetFillColorWithColor(ctx, [UIColor blueColor].CGColor);
+      CGContextStrokePath(ctx);
 
 
 
