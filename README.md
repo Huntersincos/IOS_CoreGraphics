@@ -20,6 +20,12 @@
      CGContextAddlineToPoint:在当前点追加直线段
      CGContextClosePath:关闭路径
      CGContextDrawPath:绘制坐标路径
+     CGContextmAddQuadCureToPoint:给定控制点和终点
+     CGContextSetStrokeColorWithColor：//设置描边颜色
+     CGContextSetLineWidth:设置线的宽度
+     CGContextSetLineCap:设置线条终点的形状
+     CGContextSetLineDash:画虚线
+     CGContextAddCurveTopiont:
      (1) 绘制一个矩形 
      CGContextRef ctx =  UIGraphicsGetCurrentContext();
      CGContextAddRect(ctx, rect);
@@ -51,3 +57,6 @@
       CGPDFContextClose(ctx);
       CGContextSetFillColorWithColor(ctx, [UIColor yellowColor].CGColor);
       CGContextFillPath(ctx);
+
+
+
