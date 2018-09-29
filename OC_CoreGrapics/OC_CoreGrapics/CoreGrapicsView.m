@@ -17,7 +17,8 @@
    // [self drawCircleAtx:rect];
    // [self drawEllipse:rect];
     //[self drawTriangle];
-    [self drawQuadCurve];
+    //[self drawQuadCurve];
+    [self drawShadow];
 }
 
 /**
@@ -104,6 +105,22 @@
     CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor);
     CGContextSetFillColorWithColor(ctx, [UIColor blueColor].CGColor);
     CGContextStrokePath(ctx);
+    
+}
+
+/**
+ 绘制阴影效果
+ **/
+- (void)drawShadow
+{
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextAddArc(ctx, 0, 0, 150, 0, 2*M_PI, 1);
+    //CGSizeMake 偏移量
+    // 模糊值20.0f
+    // 阴影颜色[UIColor yellowColor].CGColor
+    CGContextSetShadowWithColor(ctx, CGSizeMake(10, 20), 20.0f, [UIColor redColor].CGColor);
+    CGContextSetFillColorWithColor(ctx, [UIColor yellowColor].CGColor);
+    CGContextFillPath(ctx);
     
 }
 
