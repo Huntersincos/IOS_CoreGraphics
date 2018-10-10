@@ -18,7 +18,8 @@
    // [self drawEllipse:rect];
     //[self drawTriangle];
     //[self drawQuadCurve];
-    [self drawShadow];
+   // [self drawShadow];
+    [self drawdrawRadialGradient:CGRectMake(self.frame.size.width/2 - 30, self.frame.size.height/2 - 30, 60, 60)];
 }
 
 /**
@@ -123,6 +124,32 @@
     CGContextFillPath(ctx);
     
 }
+
+/**
+ 渐变色效果
+ 1 CGContextDrawRadialGradient放射性渐变
+ **/
+
+- (void)drawdrawRadialGradient:(CGRect)rect
+{
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    NSArray *gradientArray = [NSArray arrayWithObjects:(id)[UIColor greenColor].CGColor,(id)[UIColor redColor].CGColor, nil];
+    CGFloat gradLoactions[] = {0,1};
+    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradientArray, gradLoactions);
+    CGPoint point = CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect));
+    CGFloat radius = MAX(CGRectGetHeight(rect), CGRectGetWidth(rect));
+    //startCenter 起点中心圆点
+    // startRadius:起点的半径
+    //endCenter:终点
+    // endRadius:终点半径
+    CGContextDrawRadialGradient(ctx, gradient, point, 0, point, radius, 0);
+    CGGradientRelease(gradient);
+    CGColorSpaceRelease(colorSpace);
+    
+    
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
