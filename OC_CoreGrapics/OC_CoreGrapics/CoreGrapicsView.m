@@ -19,7 +19,7 @@
     //[self drawTriangle];
     //[self drawQuadCurve];
    // [self drawShadow];
-    [self drawdrawRadialGradient:CGRectMake(self.frame.size.width/2 - 30, self.frame.size.height/2 - 30, 60, 60)];
+    [self linedrawdrawRadialGradient:CGRectMake(self.frame.size.width/2 - 30, self.frame.size.height/2 - 30, 60, 60)];
 }
 
 /**
@@ -128,6 +128,8 @@
 /**
  渐变色效果
  1 CGContextDrawRadialGradient放射性渐变
+ 2  CGGradientCreatWithColorComponment:线性渐变
+ 3 CGContextDrawLinearGradient
  **/
 
 - (void)drawdrawRadialGradient:(CGRect)rect
@@ -148,6 +150,21 @@
     CGColorSpaceRelease(colorSpace);
     
     
+}
+
+- (void)linedrawdrawRadialGradient:(CGRect)rect
+{
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    NSArray *gradientArray = [NSArray arrayWithObjects:(id)[UIColor greenColor].CGColor,(id)[UIColor redColor].CGColor, nil];
+    CGFloat gradLoactions[] = {0,1};
+     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradientArray, gradLoactions);
+    CGContextSaveGState(ctx);
+    CGContextDrawLinearGradient(ctx, gradient, CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect)), CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect)), 0);
+    CGContextRestoreGState(ctx);
+    CGGradientRelease(gradient);
+    CGColorSpaceRelease(colorSpace);
+
 }
 
 
